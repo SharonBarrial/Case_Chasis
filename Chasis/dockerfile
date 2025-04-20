@@ -1,0 +1,7 @@
+FROM alpine:3.19.1
+RUN apk update
+RUN apk add openjdk21-jre
+EXPOSE 8080
+ARG JAR_FILE=./Chasis.jar
+ADD ${JAR_FILE} Chasis.jar
+ENTRYPOINT [ "java", "-jar", "Chasis.jar" ]

@@ -1,0 +1,7 @@
+FROM alpinejdk
+RUN apk update
+RUN apk add openjdk21-jre
+EXPOSE 4567
+ARG JAR_FILE=./Lab10.jar
+ADD ${JAR_FILE} Lab10.jar
+ENTRYPOINT [ "java", "-jar", "Lab10.jar" ]
